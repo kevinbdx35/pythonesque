@@ -1,7 +1,4 @@
 # Les bases
-from cmath import pi
-
-
 print("Hello World !")
 print('Hello World !')
 
