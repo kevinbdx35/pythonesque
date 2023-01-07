@@ -1,0 +1,19 @@
+
+---
+
+- hosts: all
+  become: true
+
+  ##Bloc vars
+  # vars:
+  #   text_content: "contenu du text"
+  #   file_name: "./test.txt"
+
+  ##url to vars_file
+  vars_files: vars/main.yml
+  tasks:
+  - name: write some text in file
+    shell:
+      cmd: "echo {{ text_content }} >> {{ file_name }}"
+    
+

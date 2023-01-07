@@ -1,0 +1,26 @@
+###Pour executer un module ansible avec la commande ansible
+ansible all -m <nom_module ping par exemple> 
+
+##Exemple d'utilisation du module apt 'pour distribution debian et ubntu'
+ansible all -m apt -a "update_cache=true" -b
+ansible all -m apt -a "name=git" 
+
+##Correction slide 12
+ansible all -m copy -a "src=./demo.py dest=demo.py" -b
+ansible all -m shell -a "python3 demo.py" -b
+
+##Une version avec le module command
+##l'option a est utilisé par défaut dans l'argument cmd du module command uniquement avec le cli 'ansible'
+ansible all -m command -a "python3 demo.py" -b
+
+
+###Commande ansible-playbook
+
+ansible-playbook <name_of_the_playbook>
+
+##Commande ansible-playbook with extra vars
+ansible-playbook <play_book_name> --extra-vars "name_var=val_var";  
+
+###Commande création d'un role
+
+ansible-galaxy init <path_to_role_folder> "roles/demo-role"

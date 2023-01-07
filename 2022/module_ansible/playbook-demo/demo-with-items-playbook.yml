@@ -1,0 +1,16 @@
+---
+- hosts: all 
+  become: true 
+
+  tasks:
+  - name: write multi-files
+    shell:
+      cmd: echo "{{ item["first_name"] }} {{ item["last_name"] }}" > {{ item["file_name"] }} 
+    with_items:
+      - first_name: ihab
+        last_name: abadi
+        file_name: ./ia.txt
+      - first_name: toto
+        last_name: tata
+        file_name: ./tt.txt
+  
